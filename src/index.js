@@ -1,25 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// class Message extends React.Component {
-//   render() {
-//     console.log(this.props)
-//     return (
-//       <div>
-//         <h1>{this.props.msg}</h1>
-//       </div>
-//     )
-//   }
-// }
-
 const Message = (props) => {
-  console.log(props)
   return (
-    <h1>{props.msg}</h1>
+    <section>
+      <h1>{props.msg}</h1>
+    </section>
+  )
+}
+
+const Chat = () => {
+  return (
+    <section>
+      <Message msg='Hey, there.'/>
+      <Message msg='Hi.'/>
+      <Message msg='How are you?'/>
+      <Message msg='Good.'/>
+    </section>
   )
 }
 
 ReactDOM.render(
-  <Message msg='Hello, World!'/>,
+  <Chat/>,
   document.getElementById("root")
 )
