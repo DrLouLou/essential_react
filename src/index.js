@@ -20,7 +20,7 @@ const Chat = ({messageList}) => {
   return (
     <div>
       {messageList.map(
-        message => <Message msg = {message.content} date = {message.date}/>
+        message => <Message msg = {message.msg} date = {message.date}/>
       )}
     </div>
   )
@@ -30,3 +30,31 @@ ReactDOM.render(
   <Chat messageList = {messageList} />,
   document.getElementById("root")
 )
+
+// -----------------------------------------------------------
+
+const Ripe = () =>
+  <div>
+    <p>This piece of fruit is deliciously ripe.</p>
+  </div>
+
+const notRipe = () =>
+  <div>
+    <p>This piece of fruit is not ripe.</p>
+  </div>
+
+class Fruit extends React.Component {
+  state = {
+    ripe : true
+  }
+
+  render() {
+    return (
+      <div>
+        {this.state.ripe? <Ripe/> : <notRipe/>}
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<Fruit/>, document.getElementById('root'))
