@@ -85,6 +85,30 @@ class Button extends React.Component {
 
 ReactDOM.render(<Button/>, document.getElementById('root'))
 
+const On = () =>
+  <div>
+    <p>This component is on.</p>
+  </div>
+
+const notOn = () =>
+  <div>
+    <p>This component is not on.</p>
+  </div>
+
+class Button extends React.Component {
+  state = { switch : on }
+
+  render () {
+    return (
+      <div>
+        {this.state.switch? <On/> : <notOn/>}
+      </div>
+    )
+  }
+}
+
+ReactDOM.render(<Button/>, document.getElementById('root'))
+
 
 
 
